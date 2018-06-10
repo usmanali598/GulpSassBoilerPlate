@@ -1,0 +1,16 @@
+{
+  "name": "gulpsassbasics",
+  "version": "1.0.0",
+  "description": "Boiler Plate for Sass project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Usman Ali",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  }
+}
