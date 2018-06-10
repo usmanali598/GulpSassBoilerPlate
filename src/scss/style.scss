@@ -1,21 +1,6 @@
-$body: orange;
-$main-font: 'Arial';
-$primary-color:green;
-$secondary-color:rgb(0, 81, 128);
-$light-color:rgb(6, 250, 250);
-$dark-color:rgb(171, 236, 18);
+@import 'variables';
+@import 'functions';
 
-$container:960px;
-$section-padding:20px;
-
-//Functions
-@function set-text-color($bg-color){
-    @if(lightness($bg-color) > 50){
-        @return black;
-    } @else {
-        @return white;
-    }
-}
 
 *{
     margin: 0;
