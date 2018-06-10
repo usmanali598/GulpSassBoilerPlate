@@ -1,5 +1,106 @@
 $body: orange;
+$main-font: 'Arial';
+$primary-color:green;
+$secondary-color:rgb(0, 81, 128);
+$light-color:rgb(6, 250, 250);
+$dark-color:rgb(171, 236, 18);
+
+$container:960px;
+$section-padding:20px;
+
+//Functions
+@function set-text-color($bg-color){
+    @if(lightness($bg-color) > 50){
+        @return black;
+    } @else {
+        @return white;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
 
 body{
     background-color: $body;
+    font-family: $main-font;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+
+.container{
+    max-width: $container;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header#main{
+    padding: 1em;
+    background: $primary-color;
+    color: set-text-color($primary-color);
+
+    h1{
+        font-size: 40px;
+    }
+}
+
+nav#main-nav{
+    background: $secondary-color;
+    height: 40px;
+    ul{
+        list-style: none;
+
+    }
+    li{
+        display: inline;
+
+    }
+    a{
+        color: white;
+        padding-right: 20px;
+        &:hover{
+            color: silver;
+        }
+    }
+}
+.section{
+    padding: $section-padding;
+
+    h1{
+        margin-bottom: 30px;
+    }
+}
+
+#section-a{
+    @extend .section;
+    background: gainsboro;
+    color: set-text-color($light-color);
+
+}
+
+#section-b{
+    @extend .section;
+    background: $dark-color;
+    color: set-text-color($dark-color);
+}
+
+.button {
+    padding: 10px 15px;
+}
+
+.button-a{
+    @extend .button;
+    background: darken($primary-color, 10%);
+    color: set-text-color($primary-color);
+}
+
+.button-b{
+    @extend .button;
+    background: lighten($secondary-color, 10%);
+    color: set-text-color($secondary-color);
 }
